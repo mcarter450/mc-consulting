@@ -1,0 +1,16 @@
+@import './base.css';
+
+#app {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.content {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
