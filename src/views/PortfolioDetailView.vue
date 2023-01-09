@@ -8,10 +8,13 @@ export default defineComponent({
   components: { ProjectSlide, ProjectVideo },
   data() {
     return {
-      breadcrumbs: {
-        'mpv': 'My Property Vault (Customer Portal)',
-        'vc-chatbot': 'Virtual Assistant for County of Ventura',
-      }
+      breadcrumbs: [{
+        name: 'mpv',
+        title: 'My Property Vault (Customer Portal)',
+      }, {
+        name: 'vc-chatbot',
+        title: 'Virtual Assistant for County of Ventura'
+      }]
     }
   },
   methods: {
@@ -19,39 +22,34 @@ export default defineComponent({
     //   console.log(this.$data.breadcrumbs)
     //   return '/portfolio/vc-chatbot'
     // }
-    getPrev(portfolio) {
-      const keys = Object.keys(this.breadcrumbs)
-      let curIndex = 0
+    getBreadCrumb(portfolio: string) {
+      const breadcrumb = this.breadcrumbs.find(element => element.name == portfolio);
 
-      while (curIndex < keys.length) {
-        if (keys[curIndex] == portfolio) break
-        curIndex++
-      }
+      if (breadcrumb) return breadcrumb.title;
 
-      curIndex-- // Prev item
-
-      if (curIndex < 0) {
-        curIndex = keys.length - 1 // Go to last item
-      }
-
-      return `/portfolio/${keys[curIndex]}`
+      return '';
     },
-    getNext(portfolio) {
-      const keys = Object.keys(this.breadcrumbs)
-      let curIndex = 0
+    getPrev(portfolio: string) {
+      let i = this.breadcrumbs.findIndex(element => element.name == portfolio);
 
-      while (curIndex < keys.length) {
-        if (keys[curIndex] == portfolio) break
-        curIndex++
+      i-- // Prev item
+
+      if (i < 0) {
+        i = this.breadcrumbs.length - 1 // Go to last item
       }
 
-      curIndex++ // Next item
+      return `/portfolio/${this.breadcrumbs[i].name}`
+    },
+    getNext(portfolio: string) {
+      let i = this.breadcrumbs.findIndex(element => element.name == portfolio);
 
-      if (curIndex > keys.length - 1) {
-        curIndex = 0 // Go to first item
+      i++ // Next item
+
+      if (i > this.breadcrumbs.length - 1) {
+        i = 0 // Go to first item
       }
 
-      return `/portfolio/${keys[curIndex]}`
+      return `/portfolio/${this.breadcrumbs[i].name}`
     }
   }
 })
@@ -62,7 +60,7 @@ export default defineComponent({
      <!-- <h1>Portfolio</h1> -->
 
     <div class="breadcrumb">
-      <router-link to="/portfolio">Portfolio</router-link> &#8250; {{ breadcrumbs[$route.params.portfolio] }}
+      <router-link to="/portfolio">Portfolio</router-link> &#8250; {{ getBreadCrumb($route.params.portfolio as string) }}
     </div>
 
     <div v-if="$route.params.portfolio == 'mpv'" class="project">
@@ -92,8 +90,8 @@ export default defineComponent({
       <ProjectSlide project="vc-chatbot" slide="vc_chatbot_thumbnail2.jpg" />
     </div>
     <div class="pagination">
-      <router-link :to="getNext($route.params.portfolio)" class="btn next" aria-label="Next Project">&#8250;</router-link>
-      <router-link :to="getPrev($route.params.portfolio)" class="btn prev" aria-label="Previous Project">&#8249;</router-link>
+      <router-link :to="getNext($route.params.portfolio as string)" class="btn next" aria-label="Next Project">&#8250;</router-link>
+      <router-link :to="getPrev($route.params.portfolio as string)" class="btn prev" aria-label="Previous Project">&#8249;</router-link>
     </div>
   </div>
 </template>

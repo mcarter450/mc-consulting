@@ -1,11 +1,11 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   project: string,
-  caption: string,
   slide: string,
+  caption?: string,
 }>()
 
-const getImageUrl = (project, slide) => {
+const getImageUrl = (project: string, slide: string) => {
   let img_url = '';
   if (project == 'mpv') {
     img_url = `../assets/images/gallery/mpv/mpv-screenshot-${slide}.png`

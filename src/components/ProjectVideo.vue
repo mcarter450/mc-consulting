@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="video-container"><iframe class="video" :src="url" frameborder="0" allowfullscreen=""></iframe></div>
+  <div class="video-container"><iframe class="video" :src="url" frameborder="0" allowfullscreen="true"></iframe></div>
 </template>
 
 <style scoped>
