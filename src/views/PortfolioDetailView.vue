@@ -24,10 +24,8 @@ export default defineComponent({
       let curIndex = 0
 
       while (curIndex < keys.length) {
-        if (keys[curIndex] == portfolio) {
-          break;
-        }
-        curIndex++;
+        if (keys[curIndex] == portfolio) break
+        curIndex++
       }
 
       curIndex-- // Prev item
@@ -43,10 +41,8 @@ export default defineComponent({
       let curIndex = 0
 
       while (curIndex < keys.length) {
-        if (keys[curIndex] == portfolio) {
-          break;
-        }
-        curIndex++;
+        if (keys[curIndex] == portfolio) break
+        curIndex++
       }
 
       curIndex++ // Next item
@@ -66,7 +62,7 @@ export default defineComponent({
      <!-- <h1>Portfolio</h1> -->
 
     <div class="breadcrumb">
-      <router-link to="/portfolio">Portfolio</router-link> > {{ breadcrumbs[$route.params.portfolio] }}
+      <router-link to="/portfolio">Portfolio</router-link> &#8250; {{ breadcrumbs[$route.params.portfolio] }}
     </div>
 
     <div v-if="$route.params.portfolio == 'mpv'" class="project">
@@ -96,8 +92,8 @@ export default defineComponent({
       <ProjectSlide project="vc-chatbot" slide="vc_chatbot_thumbnail2.jpg" />
     </div>
     <div class="pagination">
-      <router-link :to="getPrev($route.params.portfolio)">Previous Project</router-link> | 
-      <router-link :to="getNext($route.params.portfolio)">Next Project</router-link>
+      <router-link :to="getNext($route.params.portfolio)" class="btn next" aria-label="Next Project">&#8250;</router-link>
+      <router-link :to="getPrev($route.params.portfolio)" class="btn prev" aria-label="Previous Project">&#8249;</router-link>
     </div>
   </div>
 </template>
@@ -112,5 +108,37 @@ export default defineComponent({
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 2.5rem;
+}
+
+.pagination {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.pagination .btn {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.pagination .btn:hover {
+  background-color: #333;
+}
+
+.pagination .next {
+  float: right;
+}
+
+@media (max-width: 480px) {
+  .project {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .pagination {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 </style>

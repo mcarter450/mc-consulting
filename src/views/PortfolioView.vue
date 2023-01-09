@@ -35,10 +35,4 @@ import ProjectVideo from '../components/ProjectVideo.vue'
     grid-column: col-start / span 2;
   }
 }
-
-/*.projects {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 2.5rem;
-}*/
 </style>
