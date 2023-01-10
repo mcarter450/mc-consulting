@@ -16,7 +16,7 @@ import ProjectVideo from '../components/ProjectVideo.vue'
       <div class="project">
         <h2>Virtual Assistant for County of Ventura</h2>
 
-        <router-link to="/portfolio/vc-chatbot"><ProjectSlide project="" slide="vc_chatbot_thumbnail2.jpg" /></router-link>
+        <router-link to="/portfolio/vc-chatbot"><ProjectSlide project="vc-chatbot" slide="1" /></router-link>
       </div>
     </div>
   </div>

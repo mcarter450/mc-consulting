@@ -8,9 +8,10 @@
 
 <style scoped>
 .nav {
+  text-align: center;
+  padding: 0;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  text-align: center;
 }
 
 .nav > li {

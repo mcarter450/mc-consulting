@@ -6,11 +6,11 @@ const props = defineProps<{
 }>()
 
 const getImageUrl = (project: string, slide: string) => {
-  let img_url = '';
-  if (project == 'mpv') {
-    img_url = `../assets/images/gallery/mpv/mpv-screenshot-${slide}.png`
+  let img_url = '/gallery/'
+  if (project == 'vc-chatbot') {
+    img_url += `${project}/${project}-screenshot-${slide}.jpg`
   } else {
-    img_url = `../assets/images/${slide}`
+    img_url += `${project}/${project}-screenshot-${slide}.png`
   }
 
   return new URL(img_url, import.meta.url).href

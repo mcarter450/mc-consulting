@@ -87,7 +87,7 @@ export default defineComponent({
 
       <p>*Note* The admin module can't be displayed here for privacy reasons.</p>
 
-      <ProjectSlide project="vc-chatbot" slide="vc_chatbot_thumbnail2.jpg" />
+      <ProjectSlide project="vc-chatbot" slide="1" />
     </div>
     <div class="pagination">
       <router-link :to="getNext($route.params.portfolio as string)" class="btn next" aria-label="Next Project">&#8250;</router-link>
