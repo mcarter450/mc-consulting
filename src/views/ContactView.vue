@@ -25,15 +25,17 @@ export default defineComponent({
      * Clear the form
      */ 
     clearForm() {
-      for (let field in this.contact) {
-        this.contact[field] = ''
+      this.contact = {
+        name: '',
+        email: '',
+        message: '',
       }
     },
 
     /**
      * Handler for submit
      */ 
-    onSubmit(evt) {
+    onSubmit(evt: any) {
       evt.preventDefault();
 
       this.ready = false;
