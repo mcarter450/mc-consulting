@@ -26,7 +26,7 @@ const getImageSources = (project: string, slide: string) => {
 
 <template>
   <div class="slide">
-    <img class="full-width" :src="getImageUrl(project, slide)" :alt="`Screenshot ${slide}`" :srcset="getImageSources(project, slide)" loading="lazy">
+    <img class="full-width" :src="getImageUrl(project, slide)" :alt="`Screenshot ${slide}`" :srcset="getImageSources(project, slide)" sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1000px" loading="lazy">
     <p v-if="caption" class="caption">{{ caption }}</p>
   </div>
 </template>
