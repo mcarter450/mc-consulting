@@ -33,6 +33,11 @@ const router = createRouter({
       path: '/portfolio/:portfolio',
       name: 'portfolio-detail',
       component: () => import('../views/PortfolioDetailView.vue')
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'not-found',
+      component: () => import('../views/NotFoundView.vue')
     }
   ]
 })
