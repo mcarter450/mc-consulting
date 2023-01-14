@@ -15,7 +15,7 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.$http.get('http://mcarter.consulting:3001/api/generateToken').then((response) => {
+    this.$http.get('https://mcarter.consulting:3001/api/generateToken').then((response) => {
       this.token = response.data
       this.ready = true
     })
@@ -41,7 +41,7 @@ export default defineComponent({
       this.ready = false;
 
       // Send form to server  
-      this.$http.post('http://mcarter.consulting:3001/api/sendEmail', this.contact, { headers: {'Authorization': this.token} }).then((response) => {
+      this.$http.post('https://mcarter.consulting:3001/api/sendEmail', this.contact, { headers: {'Authorization': this.token} }).then((response) => {
         this.clearForm();
         this.ready = true
         this.isReceived = true
