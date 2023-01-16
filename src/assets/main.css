@@ -14,3 +14,8 @@
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
+
+.link-external {
+  vertical-align: text-top;
+  margin-left: 0.2rem;
+}

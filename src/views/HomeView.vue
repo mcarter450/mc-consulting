@@ -13,8 +13,6 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
     <h1>React | Vue.js | Full-Stack Developer</h1>
     <p class="intro">Hi, I'm Mike 👋 After working for companies of various sizes, I'm finally striking out on my own as a freelance web developer. My focus is on front-end development and bringing visual components to life. Customer service is very important to me and maintaining good relations with clients. <!-- My background is in the visual arts and I take a design-first approach to building web applications. If that sounds like a good fit for your project, let's connect… --></p>
 
-    <p class="connect">Hire me on <a href="https://www.guru.com/freelancers/mcarter76" rel="nofollow" target="_blank">Guru<LinkExternalIcon size="18px" color="currentColor" /></a> or view my profile on <a href="https://www.linkedin.com/in/michael-a-carter/" rel="nofollow" target="_blank">LinkedIn<LinkExternalIcon size="18px" color="currentColor" /></a></p>
-
     <h1 class="services">Services</h1>
 
     <h2><WebDevelopmentIcon color="#03ac13" size="20px" /> Web Development</h2>
