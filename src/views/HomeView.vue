@@ -8,7 +8,7 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
 
 <template>
   <div class="content">
-    <img class="portrait" src="@/assets/images/self-portrait-320x320.jpg" width="320" height="320">
+    <img class="portrait" src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
 
     <h1>React | Vue.js | Full-Stack Developer</h1>
     <p class="intro">Hi, I'm Mike 👋 After working for companies of various sizes, I'm finally striking out on my own as a freelance web developer. My focus is on front-end development and bringing visual components to life. Customer service is very important to me and maintaining good relations with clients. <!-- My background is in the visual arts and I take a design-first approach to building web applications. If that sounds like a good fit for your project, let's connect… --></p>
