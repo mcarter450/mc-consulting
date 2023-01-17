@@ -61,20 +61,11 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
 <style scoped>
 p.intro {
   color: #333;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 2.2rem;
   padding-left: 1rem;
   border-left:  2px solid #333;
   animation: slide-in-left 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-p.connect {
-  font-size: 1.1rem;
-}
-
-.link-external {
-  vertical-align: text-top;
-  margin-left: 0.2rem;
 }
 
 h1.services {
@@ -156,6 +147,13 @@ li {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .portrait {
+    width: 100%;
+    height: auto;
   }
 }
 

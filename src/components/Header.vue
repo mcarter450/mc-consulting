@@ -7,7 +7,7 @@
 <style scoped>
 header {
   position: relative;
-  background-image: url(/public/mc-consulting-header-background.jpg); 
+  background-image: url(/images/mc-consulting-header-background.jpg); 
   background-size: cover; 
   height: 300px;
 }

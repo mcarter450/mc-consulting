@@ -47,7 +47,6 @@ p.hire {
   font-size: 0.8rem;
   margin:  0.5rem;
   padding:  0.5rem;
-  /*border-top: 1px solid #000;*/
 }
 
 .footer-element h4 {
@@ -74,7 +73,7 @@ p.hire {
 
   .footer-element > .hire,
   .footer-element > .phone {
-    min-width: 150px;
+    min-width: 165px;
   }
 }
 </style>
