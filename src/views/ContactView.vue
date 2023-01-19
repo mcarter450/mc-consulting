@@ -4,31 +4,39 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
-      contact: {
+      fields: {
         name: '',
         email: '',
         message: '',
+        retoken: '',
       },
       token: '',
       ready: false,
       isReceived: false,
+      apiURL: 'https://mcarter.consulting:3001/api',
     }
   },
   mounted() {
-    this.$http.get('https://mcarter.consulting:3001/api/generateToken').then((response) => {
+    this.$http.get(`${this.apiURL}/generateToken`).then((response) => {
       this.token = response.data
       this.ready = true
     })
+    let recaptchaScript = document.createElement('script')
+    recaptchaScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js')
+    document.head.appendChild(recaptchaScript)
+
+    window.onRecaptcha = this.onRecaptcha;
   },
   methods: {
     /**
      * Clear the form
      */ 
     clearForm() {
-      this.contact = {
+      this.fields = {
         name: '',
         email: '',
         message: '',
+        retoken: '',
       }
     },
 
@@ -36,12 +44,17 @@ export default defineComponent({
      * Handler for submit
      */ 
     onSubmit(evt: any) {
-      evt.preventDefault();
+      evt.preventDefault()
+      grecaptcha.execute()
 
       this.ready = false;
+    },
+
+    onRecaptcha(token: string) {
+      this.fields.retoken = token
 
       // Send form to server  
-      this.$http.post('https://mcarter.consulting:3001/api/sendEmail', this.contact, { headers: {'Authorization': this.token} }).then((response) => {
+      this.$http.post(`${this.apiURL}/sendEmail`, this.fields, { headers: {'Authorization': this.token} }).then((response) => {
         this.clearForm();
         this.ready = true
         this.isReceived = true
@@ -65,12 +78,16 @@ export default defineComponent({
         <div v-if="!ready" class="loading">Sending...</div>
 
         <form class="form" @submit="onSubmit">
-          <input required name="name" v-model='contact.name' placeholder="Name" type="text" autocomplete="off">
-          <input required name="email" v-model="contact.email" placeholder="E-mail" type="email" autocomplete="off">
-          <textarea required name="message" v-model="contact.message" rows="6" placeholder="Message"></textarea>
+          <input required name="name" v-model='fields.name' placeholder="Name" type="text" autocomplete="off">
+          <input required name="email" v-model="fields.email" placeholder="E-mail" type="email" autocomplete="off">
+          <textarea required name="message" v-model="fields.message" rows="6" placeholder="Message"></textarea>
            <button class="button" :disabled="!ready">Send</button>
         </form>
-
+        <div class="g-recaptcha"
+          data-sitekey="6LdkkAMkAAAAAHwzqMk_WtA1Cs3qd9AbNU9X6mxN"
+          data-callback="onRecaptcha"
+          data-size="invisible">
+        </div>
         <div v-if="isReceived" class="thanks">Got it, thanks!</div>
       </div>
     </div>
