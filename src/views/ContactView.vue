@@ -1,6 +1,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+declare global {
+  interface Window {
+    onRecaptcha: any
+  }
+}
+
+declare var grecaptcha: any
+
 export default defineComponent({
   data() {
     return {
