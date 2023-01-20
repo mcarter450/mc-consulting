@@ -1,6 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+/**
+ * Declare globals for recaptcha
+ */
 declare global {
   interface Window {
     onRecaptcha: any
@@ -21,19 +24,21 @@ export default defineComponent({
       token: '',
       ready: false,
       isReceived: false,
-      apiURL: 'https://mcarter.consulting:3001/api',
     }
   },
   mounted() {
-    this.$http.get(`${this.apiURL}/generateToken`).then((response) => {
+    const API_URL = import.meta.env.VITE_API_URL
+
+    this.$http.get(`${API_URL}/generateToken`).then((response) => {
       this.token = response.data
       this.ready = true
     })
+
     let recaptchaScript = document.createElement('script')
     recaptchaScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js')
     document.head.appendChild(recaptchaScript)
 
-    window.onRecaptcha = this.onRecaptcha;
+    window.onRecaptcha = this.onRecaptcha
   },
   methods: {
     /**
@@ -55,21 +60,25 @@ export default defineComponent({
       evt.preventDefault()
       grecaptcha.execute()
 
-      this.ready = false;
+      this.ready = false
     },
 
     onRecaptcha(token: string) {
+      const API_URL = import.meta.env.VITE_API_URL
+
       this.fields.retoken = token
 
       // Send form to server  
-      this.$http.post(`${this.apiURL}/sendEmail`, this.fields, { headers: {'Authorization': this.token} }).then((response) => {
-        this.clearForm();
-        this.ready = true
-        this.isReceived = true
-      }).catch((e) => {
-        console.log(e)
-        this.ready = true
-      });
+      this.$http.post(`${API_URL}/sendEmail`, this.fields, { headers: {'Authorization': this.token} })
+        .then((response) => {
+          this.clearForm()
+          this.ready = true
+          this.isReceived = true
+        })
+        .catch((e) => {
+          console.log(e)
+          this.ready = true
+        })
     }
   }
 })
