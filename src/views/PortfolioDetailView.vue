@@ -14,23 +14,24 @@ export default defineComponent({
       }, {
         name: 'vc-chatbot',
         title: 'Virtual Assistant for County of Ventura'
-      }]
+      }],
+    }
+  },
+  computed: {
+    breadcrumbIndex() {
+      const portfolio = this.$route.params.portfolio
+
+      return this.breadcrumbs.findIndex(element => element.name == portfolio)
     }
   },
   methods: {
-    // getPrev: <string>(portfolio: string) => {
-    //   console.log(this.$data.breadcrumbs)
-    //   return '/portfolio/vc-chatbot'
-    // }
-    getBreadCrumb(portfolio: string) {
-      const breadcrumb = this.breadcrumbs.find(element => element.name == portfolio);
+    getBreadcrumb() {
+      let i = this.breadcrumbIndex
 
-      if (breadcrumb) return breadcrumb.title;
-
-      return '';
+      return this.breadcrumbs[i] ? this.breadcrumbs[i].title : ''
     },
-    getPrev(portfolio: string) {
-      let i = this.breadcrumbs.findIndex(element => element.name == portfolio);
+    getPrev() {
+      let i = this.breadcrumbIndex
 
       i-- // Prev item
 
@@ -40,8 +41,8 @@ export default defineComponent({
 
       return `/portfolio/${this.breadcrumbs[i].name}`
     },
-    getNext(portfolio: string) {
-      let i = this.breadcrumbs.findIndex(element => element.name == portfolio);
+    getNext() {
+      let i = this.breadcrumbIndex
 
       i++ // Next item
 
@@ -57,10 +58,8 @@ export default defineComponent({
 
 <template>
   <div class="content">
-     <!-- <h1>Portfolio</h1> -->
-
     <div class="breadcrumb">
-      <router-link to="/portfolio">Portfolio</router-link> &#8250; {{ getBreadCrumb($route.params.portfolio as string) }}
+      <router-link to="/portfolio">Portfolio</router-link> &#8250; {{ getBreadcrumb() }}
     </div>
 
     <div v-if="$route.params.portfolio == 'mpv'" class="project">
@@ -90,12 +89,11 @@ export default defineComponent({
       <ProjectSlide project="vc-chatbot" slide="1" />
     </div>
     <div class="pagination">
-      <router-link :to="getNext($route.params.portfolio as string)" class="btn next" aria-label="Next Project">&#8250;</router-link>
-      <router-link :to="getPrev($route.params.portfolio as string)" class="btn prev" aria-label="Previous Project">&#8249;</router-link>
+      <router-link :to="getNext()" class="btn next" aria-label="Next Project">&#8250;</router-link>
+      <router-link :to="getPrev()" class="btn prev" aria-label="Previous Project">&#8249;</router-link>
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .breadcrumb {
