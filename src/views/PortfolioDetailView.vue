@@ -8,10 +8,10 @@ export default defineComponent({
   components: { ProjectSlide, ProjectVideo },
   data() {
     return {
-      breadcrumbs: [{
+      breadcrumbs: [/*{
         name: 'mpv',
         title: 'My Property Vault (Customer Portal)',
-      }, {
+      }, */{
         name: 'vc-chatbot',
         title: 'Virtual Assistant for County of Ventura'
       }],
@@ -62,7 +62,7 @@ export default defineComponent({
       <router-link to="/portfolio">Portfolio</router-link> &#8250; {{ getBreadcrumb() }}
     </div>
 
-    <div v-if="$route.params.portfolio == 'mpv'" class="project">
+    <!-- <div v-if="$route.params.portfolio == 'mpv'" class="project">
       <h1>My Property Vault (Customer Portal)</h1>
 
       <p>Keith at MyPropertyVault.com hired MC Consulting to implement the front-end changes for his customer portal app. Several new components and widgets were created in Vue.js, including a custom Icon Mapping service to associate each top level category with the correct icon.</p>
@@ -76,7 +76,7 @@ export default defineComponent({
       <ProjectSlide project="mpv" slide="4" caption="Reports Page (Google Charts)" />
 
       <ProjectVideo url="https://www.youtube.com/embed/GkipW7e4B5Q" />
-    </div>
+    </div> -->
     <div v-if="$route.params.portfolio == 'vc-chatbot'" class="project">
       <h1>Virtual Assistant for County of Ventura</h1>
 

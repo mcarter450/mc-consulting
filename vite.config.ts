@@ -7,7 +7,6 @@ import Sitemap from 'vite-plugin-sitemap'
 const dynamicRoutes = [
   '/contact',
   '/portfolio',
-  '/portfolio/mpv',
   '/portfolio/vc-chatbot',
 ];
 

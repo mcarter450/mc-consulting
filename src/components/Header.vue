@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img class="mc-logo" src="@/assets/images/mc-consulting-logo.png" width="518" height="500">
+    <img class="mc-logo" src="@/assets/images/mc-consulting-logo-2.png" width="500" height="500">
   </header>
 </template>
 

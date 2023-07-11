@@ -8,7 +8,6 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
       <img class="mc-logo" src="@/assets/images/mc-consulting-logo-200.png" width="175" height="100">
     </div>
     <div class="footer-element">
-      <h4>HIRE US</h4>
       <p class="hire">
         Profile on <a href="https://www.guru.com/freelancers/mcarter76" rel="nofollow" target="_blank">Guru<LinkExternalIcon size="17px" color="currentColor" /></a><br>
         Profile on <a href="https://www.upwork.com/freelancers/~01f7c1e3f5883b1b0e" rel="nofollow" target="_blank">Upwork<LinkExternalIcon size="17px" color="currentColor" /></a><br>
@@ -16,8 +15,7 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
       </p>
     </div>
     <div class="footer-element">
-      <h4 class="phone">CALL US</h4>
-      <h3 class="phone">818 570 1801</h3>
+      <h3 class="phone"><a href="/contact">Contact us</a></h3>
     </div>
     <div class="copyright">
       © 2022 MC Consulting. All rights reserved.
@@ -49,6 +47,7 @@ p.hire {
   padding:  0.5rem;
 }
 
+.footer-element h3,
 .footer-element h4 {
   margin-top: 0;
 }
