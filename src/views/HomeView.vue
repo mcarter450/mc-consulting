@@ -13,7 +13,7 @@ export default {
   <div class="content">
     <div class="portrait">
       <img src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
-      <p class="caption">Mike is a Web Developer and Cyclist living in the Los Angeles area with his wife Ollie and wiener dog Kona.</p>
+      <p class="caption">Mike (Owner) is a Web Developer and Cyclist living in the Los Angeles area with his wife Ollie and wiener dog Kona.</p>
     </div>
 
     <h1>React | Vue.js | Full-Stack Development</h1>
@@ -64,7 +64,7 @@ export default {
 
       <h2>Open Source Contributions</h2>
 
-      <p class="service">Mike wrote the Products Feed Generator and Free Shipping Kit WordPress plugins for his <a href="https://www.kahoycrafts.com" target="_blank">KahoyCrafts.com</a> website. Both were approved for the WordPress.org plugin directory and are actively maintained.</p>
+      <p class="service">Mike authored the Products Feed Generator and Free Shipping Kit WordPress plugins for his <a href="https://www.kahoycrafts.com" target="_blank">KahoyCrafts.com</a> website. Both were officially approved by the WordPress.org community and are actively maintained in his spare time.</p>
 
       <div class="wp-plugins">
         <h4>Products Feed Generator</h4>
