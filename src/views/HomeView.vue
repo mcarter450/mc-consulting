@@ -22,6 +22,11 @@ export default {
 
     <p class="intro"><a href="/contact">Contact us</a> for a free estimate.</p>
 
+    <div class="portrait bottom">
+      <img src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
+      <p class="caption">Mike (Owner) is a Web Developer and Cyclist living in the Los Angeles area with his wife Ollie and wiener dog Kona.</p>
+    </div>
+
     <h1 class="services">Services</h1>
 
     <h2><i class="fa-solid fa-code"></i> Web Development</h2>
@@ -59,11 +64,6 @@ export default {
     <h2><i class="fa-solid fa-magnifying-glass"></i> SEO & Accessibility</h2>
 
     <p class="service">Please <RouterLink to="/contact">contact us</RouterLink> for a consultation on your website and recommendations for improving SEO and accessibility.</p>
-
-    <div class="portrait bottom">
-      <img src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
-      <p class="caption">Mike (Owner) is a Web Developer and Cyclist living in the Los Angeles area with his wife Ollie and wiener dog Kona.</p>
-    </div>
 
     <aside class="open-source">
 
@@ -177,6 +177,12 @@ li {
   list-style: square;
 }
 
+.open-source {
+  border: 1px dashed gray;
+  margin: 4rem;
+  padding: 0 2rem;
+}
+
 .wp-plugins {
   margin-bottom: 1.5rem;
 }
@@ -207,21 +213,13 @@ li {
   margin-top: 0;
 }
 
-.open-source {
-  border: 1px dashed gray;
-  margin: 4rem;
-  padding: 0 2rem;
+@media (max-width: 768px) {
+  .open-source {
+    margin: 1.5rem 0rem;
+  }
 }
 
-@media (max-width: 559px) {
-  .wp-plugins {
-    margin-top: 0;
-  }
-
-  .open-source {
-    margin: 0rem;
-    padding: 0 1rem;
-  }
+@media (max-width: 576px) {
 
   .portrait.top {
     display: none;
@@ -231,6 +229,25 @@ li {
     display: flex;
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .open-source {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .wp-plugins .item {
+    display: block;
+  }
+
+  .wp-plugins .icon {
+    float: right;
+    margin-right: 0;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .wp-plugins {
+    margin-top: 0;
   }
 
 }
