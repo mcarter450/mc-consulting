@@ -179,8 +179,12 @@ li {
 
 .open-source {
   border: 1px dashed gray;
-  margin: 4rem;
-  padding: 0 2rem;
+  margin: 2.5rem 4rem 4rem 4rem;
+  padding: 1.7rem 2rem;
+}
+
+.open-source h2 {
+  margin-top: 0;
 }
 
 .wp-plugins {
@@ -232,7 +236,7 @@ li {
   }
 
   .open-source {
-    padding: 0 1rem 1rem 1rem;
+    padding: 0.7rem 1rem;
   }
 
   .wp-plugins .item {
