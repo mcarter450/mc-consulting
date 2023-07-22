@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div class="content">
-    <div class="portrait">
+    <div class="portrait top">
       <img src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
       <p class="caption">Mike (Owner) is a Web Developer and Cyclist living in the Los Angeles area with his wife Ollie and wiener dog Kona.</p>
     </div>
@@ -59,6 +59,11 @@ export default {
     <h2><i class="fa-solid fa-magnifying-glass"></i> SEO & Accessibility</h2>
 
     <p class="service">Please <RouterLink to="/contact">contact us</RouterLink> for a consultation on your website and recommendations for improving SEO and accessibility.</p>
+
+    <div class="portrait bottom">
+      <img src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
+      <p class="caption">Mike (Owner) is a Web Developer and Cyclist living in the Los Angeles area with his wife Ollie and wiener dog Kona.</p>
+    </div>
 
     <aside class="open-source">
 
@@ -141,6 +146,24 @@ h2 > i {
   margin-left: 25px;
 }
 
+.portrait.bottom {
+  display: none;
+  width: auto;
+  float: none;
+  margin: 1rem 2rem 1.5rem 2rem;
+}
+
+.portrait.bottom p.caption {
+  margin-top: auto;
+  margin-bottom: auto; 
+}
+
+.portrait.bottom img {
+  width: 128px;
+  height: 128px;
+  margin-right: 1rem;
+}
+
 .portrait > img {
   border-radius: 50%;
 }
@@ -200,18 +223,20 @@ li {
     padding: 0 1rem;
   }
 
-  .portrait {
-    float: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  .portrait.top {
+    display: none;
   }
+
+  .portrait.bottom {
+    display: flex;
+  }
+
 }
 
-@media (max-width: 320px) {
-  .portrait {
-    width: 100%;
-    height: auto;
+@media (max-width: 360px) {
+  .portrait.bottom {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
