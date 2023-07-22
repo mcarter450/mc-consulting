@@ -8,27 +8,19 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
       <img class="mc-logo" src="@/assets/images/mc-consulting-logo-200.png" width="175" height="100">
     </div>
     <div class="footer-element">
-      <p class="hire">
-        Profile on <a href="https://www.guru.com/freelancers/mcarter76" rel="nofollow" target="_blank">Guru<LinkExternalIcon size="17px" color="currentColor" /></a><br>
-        Profile on <a href="https://www.upwork.com/freelancers/~01f7c1e3f5883b1b0e" rel="nofollow" target="_blank">Upwork<LinkExternalIcon size="17px" color="currentColor" /></a><br>
-        <!-- View my profile on <a href="https://www.linkedin.com/in/michael-a-carter/" rel="nofollow" target="_blank">LinkedIn<LinkExternalIcon size="17px" color="currentColor" /></a> -->
-      </p>
+      <a href="https://www.facebook.com/mcwebsiteconsulting" rel="nofollow" target="_blank"><i class="fa-brands fa-facebook"></i></a> 
+      <a href="https://www.linkedin.com/in/michael-a-carter/" rel="nofollow" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
     </div>
     <div class="footer-element">
-      <h3 class="phone"><a href="/contact">Contact us</a></h3>
+      <a href="/contact">Contact us</a>
     </div>
     <div class="copyright">
-      © 2022 MC Consulting. All rights reserved.
+      © 2023 MC Consulting. All rights reserved.
     </div>
   </footer>
 </template>
 
 <style scoped>
-p.hire {
-  line-height: 1.5rem;
-  margin-top: 0;
-}
-
 .site-footer {
   display: grid;
   grid-template-columns: repeat(3, [col-start] 1fr);
@@ -47,9 +39,13 @@ p.hire {
   padding:  0.5rem;
 }
 
-.footer-element h3,
-.footer-element h4 {
-  margin-top: 0;
+.footer-element {
+  font-size: 1.7rem;
+}
+
+.footer-element > a {
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
 }
 
 @media (max-width: 480px) {
@@ -71,8 +67,12 @@ p.hire {
   }
 
   .footer-element > .hire,
-  .footer-element > .phone {
+  .footer-element > .contact {
     min-width: 165px;
+  }
+
+  .footer-element > .contact {
+    margin-top: 1rem;
   }
 }
 </style>

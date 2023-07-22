@@ -6,6 +6,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 import './assets/main.css'
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
+import '@fortawesome/fontawesome-free/css/brands.min.css'
+import '@fortawesome/fontawesome-free/css/solid.min.css'
 
 const app = createApp(App)
 

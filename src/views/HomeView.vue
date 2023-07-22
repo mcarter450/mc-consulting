@@ -1,60 +1,117 @@
-<script setup lang="ts">
-import WebDevelopmentIcon from '../components/icons/WebDevelopment.vue'
-import CloudHostingIcon from '../components/icons/CloudHosting.vue'
-import SearchIcon from '../components/icons/Search.vue'
-import OpenSourceIcon from '../components/icons/OpenSource.vue'
-import LinkExternalIcon from '../components/icons/LinkExternal.vue'
+<script lang="ts">
+export default {
+  data() {
+    return {
+      showFullDesc1: false,
+      showFullDesc2: false,
+    }
+  }
+}
 </script>
 
 <template>
   <div class="content">
-    <img class="portrait" src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
+    <div class="portrait">
+      <img src="@/assets/images/self-portrait-320x320.jpg" width="256" height="256">
+      <p class="caption">Mike is a Web Developer and Cyclist living in the Los Angeles area with his wife Ollie and wiener dog Kona.</p>
+    </div>
 
-    <h1>React | Vue.js | Full-Stack Developer</h1>
-    <p class="intro">Hi, I'm Mike 👋 After working for companies of various sizes, I'm finally striking out on my own as a freelance web developer. My focus is on front-end development and bringing visual components to life. Customer service is very important to me and maintaining good relations with clients. <!-- My background is in the visual arts and I take a design-first approach to building web applications. If that sounds like a good fit for your project, let's connect… --></p>
+    <h1>React | Vue.js | Full-Stack Development</h1>
+
+    <p class="intro">MC Consulting is able to drive projects from concept to completion. We're small business friendly and take the time to fully understand the needs of our clients. Let us help you get your website up and running today.</p>
+
+    <p class="intro"><a href="/contact">Contact us</a> for a free estimate.</p>
 
     <h1 class="services">Services</h1>
 
-    <h2><WebDevelopmentIcon color="#03ac13" size="20px" /> Web Development</h2>
+    <h2><i class="fa-solid fa-code"></i> Web Development</h2>
 
-    <p class="service">Strong familiarity with all stages of the SDLC; especially testing, backporting, documentation, and reporting. Experienced in: OOP, Data Modeling, Interface & Responsive Design, Usability, Analytics, SEO, Agile, TDD, Release Management, Deployment, Build Configuration, and CI.</p>
+    <p class="service">Custom web application development in popular frameworks.</p>
 
     <ul class="service">
       <li>JavaScript development in React, Vue.js, Bootstrap or jQuery frameworks.</li>
       <li>Front-end CSS and Sass development.</li>
       <li>PHP development in Laravel & WordPress frameworks.</li>
+      <li>Performance tuning and optimizations.</li>
     </ul>
 
-    <h2><CloudHostingIcon color="#03ac13" size="20px" /> Cloud Hosting</h2>
+    <h2><i class="fa-brands fa-figma"></i> Web & UI/UX Design</h2>
+
+    <p class="service">Layout and design of new websites and apps.</p>
+
+    <ul class="service">
+      <li>Design comps in Sketch or Figma.</li>
+      <li>Simulations of interactive components.</li>
+      <li>Usability testing.</li>
+    </ul>
+
+    <h2><i class="fa-solid fa-cloud"></i> Cloud Hosting</h2>
 
     <p class="service">Expertise in hosting with popular cloud hosting platforms, including AWS, Amazon Lightsail, and Linode. Looking to launch a new website or need a hand with your hosting configuration or web services, we can help.</p>
 
     <ul class="service">
       <li>DNS for web or mail servers</li>
+      <li>Cloudflare or AWS configuration</li>
       <li>Firewall configuration</li>
-      <li>Cloudflare configuration</li>
       <li>Linux or system administration</li>
     </ul>
 
-    <h2><SearchIcon color="#03ac13" size="20px" /> SEO & Accessibility</h2>
+    <h2><i class="fa-solid fa-magnifying-glass"></i> SEO & Accessibility</h2>
 
-    <p class="service">Please <RouterLink to="/contact">contact us</RouterLink> for a consultation on your website today and recommendations for improving SEO and accessibility.</p>
+    <p class="service">Please <RouterLink to="/contact">contact us</RouterLink> for a consultation on your website and recommendations for improving SEO and accessibility.</p>
 
-    <h2><OpenSourceIcon color="#03ac13" size="20px" /> Open Source Development</h2>
+    <aside class="open-source">
 
-    <p class="service">I wrote the Free Shipping Kit and Products Feed Generator WordPress plugins for my <a href="https://www.kahoycrafts.com" target="_blank">KahoyCrafts.com<LinkExternalIcon size="17" color="currentColor" /></a> website. Both were approved for the WordPress.org plugin directory and I still actively maintain them.</p>
+      <h2>Open Source Contributions</h2>
 
-    <div class="wp-plugins">
-      <div class="item products-feed-generator">
-        <a href="https://wordpress.org/plugins/products-feed-generator/" target="_blank">
-          <img src="@/assets/images/products-feed-generator-256x256.png" alt="Products Feed Generator" width="218" height="256"> 
-          <div class="caption">View on WordPress.org<LinkExternalIcon size="17px" color="currentColor" /></div></a></div>
+      <p class="service">Mike wrote the Products Feed Generator and Free Shipping Kit WordPress plugins for his <a href="https://www.kahoycrafts.com" target="_blank">KahoyCrafts.com</a> website. Both were approved for the WordPress.org plugin directory and are actively maintained.</p>
 
-      <div class="item free-shipping-kit">
-        <a href="https://wordpress.org/plugins/free-shipping-kit/" target="_blank">
-          <img src="@/assets/images/free-shipping-kit-256x256.png" alt="Free Shipping Kit" width="256" height="256"> 
-          <div class="caption">View on WordPress.org<LinkExternalIcon size="17px" color="currentColor" /></div></a></div>
-    </div>
+      <div class="wp-plugins">
+        <h4>Products Feed Generator</h4>
+        <div class="item">
+          <div class="icon">
+            <a href="https://wordpress.org/plugins/products-feed-generator/" target="_blank">
+              <img style="margin-left: 17px;" src="@/assets/images/products-feed-generator-256x256.png" width="111" height="111" alt="Products Feed Generator"></a>
+          </div>
+          <div class="description">
+            <div v-show="!showFullDesc1">
+              <p>This plugin generates a Data Feed for Google Shopping using an existing catalog of…</p>
+              <a href="#" @click.prevent="showFullDesc1 = true">See more <i class="fa-solid fa-angle-down"></i></a>
+            </div>
+            <div v-show="showFullDesc1">
+              <p>This plugin generates a Data Feed for Google Shopping using an existing catalog of WooCommerce products.</p>
+              <p>Products Feed Generator for WooCommerce provides all of the necessary features to create a Google Shopping feed and streamlines the process of mapping designated google variant-related fields to custom product attributes. We hope you’ll find the interface to be simple, clean, and uncluttered.</p>
+            </div>
+            <ul>
+              <li>700 Downloads</li>
+              <li>10+ Active Installations</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Free Shipping Kit</h4>
+        <div class="item">
+          <div class="icon">
+            <a href="https://wordpress.org/plugins/free-shipping-kit/" target="_blank">
+            <img src="@/assets/images/free-shipping-kit-256x256.png" width="128" height="128" alt="Free Shipping Kit"></a>
+          </div>
+          <div class="description">
+            <div v-show="!showFullDesc2">
+              <p>This plugin was designed to address the inability of similar free shipping plugins, to…</p>
+              <a href="#" @click.prevent="showFullDesc2 = true">See more <i class="fa-solid fa-angle-down"></i></a>
+            </div>
+            <div v-show="showFullDesc2">
+              <p>This plugin was designed to address the inability of similar free shipping plugins, to assign a free shipping badge at the product level.</p>
+              <p>There are several existing options for assigning free shipping based on the cart subtotal, but I wanted a convenient way to integrate a free shipping badge with a simple flat-rate based free shipping class. This is similar to the free shipping options available in marketplaces like Etsy where the shipping costs are factored into the price of the item. This also works well for lightweight items, where the shipping cost is less significant.</p>
+            </div>
+            <ul>
+              <li>1,800+ Downloads</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </aside>
   </div>
 </template>
 
@@ -63,8 +120,6 @@ p.intro {
   color: #333;
   font-size: 1.3rem;
   line-height: 2.2rem;
-  padding-left: 1rem;
-  border-left:  2px solid #333;
   animation: slide-in-left 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
@@ -76,10 +131,23 @@ h1.services {
   line-height: 1.4rem;
 }
 
+h2 > i {
+  color: #03ac13;
+}
+
 .portrait {
   float: right;
-  border-radius: 50%;
+  width: 256px;
   margin-left: 25px;
+}
+
+.portrait > img {
+  border-radius: 50%;
+}
+
+.portrait .caption {
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 li {
@@ -87,59 +155,49 @@ li {
 }
 
 .wp-plugins {
-  display: grid;
-  grid-template-columns: repeat(2, [col-start] 1fr);
-  align-items: flex-end;
-  grid-row-gap: 5%;
-  margin-top: 15px;
-  margin-bottom: 4.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.products-feed-generator {
-  justify-self: end;
+.wp-plugins .item {
+  display: flex;
 }
 
-.free-shipping-kit {
-  justify-self: start;
+.wp-plugins .icon {
+  margin-right: 1rem;
 }
 
-.products-feed-generator {
-  position: relative;
-  left: -38px;
-}
-
-.wp-plugins .caption {
+.wp-plugins .icon .caption {
   text-align: center;
   margin-top: 0.5rem;
 }
 
-.wp-plugins .free-shipping-kit .caption {
-  margin-left: 38px;
+.wp-plugins .icon .caption {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.wp-plugins .description p {
+  margin-top: 0;
+}
+
+.wp-plugins .description > a {
+  margin-top: 0;
+}
+
+.open-source {
+  border: 1px dashed gray;
+  margin: 4rem;
+  padding: 0 2rem;
 }
 
 @media (max-width: 559px) {
   .wp-plugins {
-    align-items: initial;
-    column-gap: 0;
     margin-top: 0;
   }
 
-  .wp-plugins > .item {
-    grid-column: col-start 1 / span 4;
-  }
-
-  .free-shipping-kit, 
-  .products-feed-generator {
-    justify-self: center;
-  }
-
-  .products-feed-generator {
-    left:  0;
-  }
-
-  .free-shipping-kit {
-    position: relative;
-    left: -19px;
+  .open-source {
+    margin: 0rem;
+    padding: 0 1rem;
   }
 
   .portrait {
