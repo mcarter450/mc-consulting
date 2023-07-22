@@ -47,7 +47,7 @@ export default {
 
     <h2><i class="fa-solid fa-cloud"></i> Cloud Hosting</h2>
 
-    <p class="service">Expertise in hosting with popular cloud hosting platforms, including AWS, Amazon Lightsail, and Linode. Looking to launch a new website or need a hand with your hosting configuration or web services, we can help.</p>
+    <p class="service">Expertise in hosting with platforms like AWS, Amazon Lightsail, or Linode. Looking to launch a new website or need a hand with your hosting configuration or web services, we can help.</p>
 
     <ul class="service">
       <li>DNS for web or mail servers</li>
