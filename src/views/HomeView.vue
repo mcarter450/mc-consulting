@@ -229,15 +229,10 @@ li {
 
   .portrait.bottom {
     display: flex;
-  }
-
-}
-
-@media (max-width: 360px) {
-  .portrait.bottom {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
 }
 
 /**
