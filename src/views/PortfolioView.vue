@@ -8,11 +8,11 @@ import ProjectVideo from '../components/ProjectVideo.vue'
     <h1>Portfolio</h1>
 
     <div class="projects">
-      <!-- <div class="project">
-        <h2>My Property Vault (Customer Portal)</h2>
+      <div class="project">
+        <h2>Cooking Blog (Sample Website)</h2>
 
-        <router-link to="/portfolio/mpv"><ProjectSlide project="mpv" slide="1" /></router-link>
-      </div> -->
+        <router-link to="/portfolio/cooking-blog"><ProjectSlide project="cooking-blog" slide="1" /></router-link>
+      </div>
       <div class="project">
         <h2>Virtual Assistant for County of Ventura</h2>
 

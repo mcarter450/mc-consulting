@@ -8,10 +8,10 @@ export default defineComponent({
   components: { ProjectSlide, ProjectVideo },
   data() {
     return {
-      breadcrumbs: [/*{
-        name: 'mpv',
-        title: 'My Property Vault (Customer Portal)',
-      }, */{
+      breadcrumbs: [{
+        name: 'cooking-blog',
+        title: 'Cooking Blog (Sample Website)',
+      }, {
         name: 'vc-chatbot',
         title: 'Virtual Assistant for County of Ventura'
       }],
@@ -62,21 +62,15 @@ export default defineComponent({
       <router-link to="/portfolio">Portfolio</router-link> &#8250; {{ getBreadcrumb() }}
     </div>
 
-    <!-- <div v-if="$route.params.portfolio == 'mpv'" class="project">
-      <h1>My Property Vault (Customer Portal)</h1>
+    <div v-if="$route.params.portfolio == 'cooking-blog'" class="project">
+      <h1>Cooking Blog (Sample Website)</h1>
 
-      <p>Keith at MyPropertyVault.com hired MC Consulting to implement the front-end changes for his customer portal app. Several new components and widgets were created in Vue.js, including a custom Icon Mapping service to associate each top level category with the correct icon.</p>
+      <p>A sample cooking blog created in Figma.</p>
 
-      <ProjectSlide project="mpv" slide="1" caption="Dashboard view for MPV (Template built in Vue.js)" />
+      <ProjectSlide project="cooking-blog" slide="1" caption="Page Layout" />
 
-      <ProjectSlide project="mpv" slide="2" caption="Refer-A-Friend Banner and Bootstrap Modal" />
-
-      <ProjectSlide project="mpv" slide="3" caption="Contact Page (Template built in Vue.js)" />
-
-      <ProjectSlide project="mpv" slide="4" caption="Reports Page (Google Charts)" />
-
-      <ProjectVideo url="https://www.youtube.com/embed/GkipW7e4B5Q" />
-    </div> -->
+      <!-- <ProjectVideo url="https://www.youtube.com/embed/GkipW7e4B5Q" /> -->
+    </div>
     <div v-if="$route.params.portfolio == 'vc-chatbot'" class="project">
       <h1>Virtual Assistant for County of Ventura</h1>
 
@@ -86,7 +80,7 @@ export default defineComponent({
 
       <p>*Note* The admin module can't be displayed here for privacy reasons.</p>
 
-      <ProjectSlide project="vc-chatbot" slide="1" />
+      <ProjectSlide project="vc-chatbot" slide="1" caption="Screenshot" />
     </div>
     <div class="pagination">
       <router-link :to="getNext()" class="btn next" aria-label="Next Project">&#8250;</router-link>
