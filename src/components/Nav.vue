@@ -2,6 +2,7 @@
   <ul class="nav">
     <li><RouterLink class="nav--link" to="/">Home</RouterLink></li>
     <li><RouterLink class="nav--link" to="/portfolio">Portfolio</RouterLink></li>
+    <li><RouterLink class="nav--link" to="/about">About</RouterLink></li>
     <li><RouterLink class="nav--link" to="/contact">Contact</RouterLink></li>
   </ul>
 </template>

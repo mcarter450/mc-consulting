@@ -4,75 +4,96 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
 
 <template>
   <footer class="site-footer">
-    <div class="footer-element">
-      <img class="mc-logo" src="@/assets/images/mc-consulting-logo-200.png" width="175" height="100">
-    </div>
-    <div class="footer-element">
+    <div class="social">
       <a href="https://www.facebook.com/mcwebsiteconsulting" rel="nofollow" target="_blank"><i class="fa-brands fa-facebook"></i></a> 
       <a href="https://www.linkedin.com/in/michael-a-carter/" rel="nofollow" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
     </div>
-    <div class="footer-element">
-      <a href="/contact">Contact us</a>
-    </div>
-    <div class="copyright">
-      © 2023 MC Consulting. All rights reserved.
+    <div class="links">
+      <div class="site-logo">
+        <img class="mc-logo" src="@/assets/images/mc-consulting-logo-200.png">
+      </div>
+      <div class="footer-element">
+        <RouterLink class="nav--link" to="/privacy">Privacy Policy</RouterLink>
+      </div>
+      <div class="footer-element">
+        <RouterLink class="nav--link" to="/terms">Terms and Conditions</RouterLink>
+      </div>
+      <div class="copyright">
+        © 2024 MC Consulting. All rights reserved.
+      </div>
     </div>
   </footer>
 </template>
 
 <style scoped>
 .site-footer {
-  display: grid;
-  grid-template-columns: repeat(3, [col-start] 1fr);
-  column-gap: 5%;
-  align-items: stretch;
-  justify-items: center;
+  clear: both;
   background-color: #def1e2;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+}
+
+.social > a {
+  margin: 0 0.5rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1.5rem;
+}
+
+.links .footer-element {
+  font-size: 1rem;
 }
 
 .copyright {
-  grid-column: col-start / span 3;
-  font-size: 0.8rem;
-  margin:  0.5rem;
-  padding:  0.5rem;
+  font-size: 1rem;
 }
 
-.footer-element {
-  font-size: 1.7rem;
+.site-logo {
+  display: flex;
+  align-items: center;
 }
 
-.footer-element > a {
-  margin-left: 0.7rem;
-  margin-right: 0.7rem;
+.mc-logo {
+  max-height: 50px;
 }
+
+.fa-facebook,
+.fa-linkedin {
+  color: #333;
+}
+
+a:hover .fa-facebook,
+a:hover .fa-linkedin {
+  color: #666;
+}
+
 
 @media (max-width: 480px) {
   .mc-logo {
     display: none;
   }
 
+  .links {
+    flex-direction: column;
+  }
+
   .footer-element {
-    grid-column: col-start / span 3;
-  }
-
-  .footer-element h4 {
-    margin-top: 1.33em;
-    margin-bottom: 1em;
-  }
-
-  .footer-element > .hire {
-    margin-bottom: 0;
-  }
-
-  .footer-element > .hire,
-  .footer-element > .contact {
-    min-width: 165px;
-  }
-
-  .footer-element > .contact {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 </style>
