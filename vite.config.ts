@@ -8,6 +8,7 @@ const dynamicRoutes = [
   '/contact',
   '/portfolio',
   '/portfolio/vc-chatbot',
+  '/about'
 ];
 
 // https://vitejs.dev/config/

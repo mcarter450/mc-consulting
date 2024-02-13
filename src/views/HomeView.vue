@@ -27,6 +27,8 @@ export default {
         <img class="sooribali-logo" src="@/assets/images/sooribali.svg" style="min-height: 59px;" alt="Soori Bali Logo"></a>
       <a href="https://www.soorihighlineny.com" target="_blank">
         <img src="@/assets/images/soorihighline.svg" style="min-height: 89px;" alt="Soori High Line Logo"></a>
+      <a href="https://polyculturegroup.com" target="_blank">
+        <img src="@/assets/images/polyculture.svg" style="min-width: 200px;" alt="Polyculture Logo"></a>
     </div>
 
     <h1 class="services">Services</h1>

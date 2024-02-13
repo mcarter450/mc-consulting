@@ -29,16 +29,17 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
 .site-footer {
   clear: both;
   background-color: #def1e2;
-  padding-top: 1rem;
   padding-bottom: 2rem;
   margin-top: 3rem;
 }
 
 .social {
+  background-color: #def1eb;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #fff;
