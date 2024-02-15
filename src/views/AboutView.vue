@@ -41,7 +41,7 @@ p {
 
 p.description {
   font-size: 1.3rem;
-  line-height: 2.2rem;
+  line-height: 1.6;
   margin-top: 2rem;
 }
 
@@ -51,7 +51,7 @@ h2 {
 
 .portrait-block {
   display: flex;
-  background-color: #f1deed;
+  background: linear-gradient(90deg, #e5bedb, transparent);
   height: 120px;
   align-items: center;
 }
@@ -63,12 +63,14 @@ h2 {
 
 .portrait-block > img {
   transform: rotate(350deg) scale(1.1);
+  border:  2px solid #fff;
   margin-left: 1.5rem;
 }
 
 li {
   list-style: square;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1.3;
 }
 
 @media (max-width: 480px) {

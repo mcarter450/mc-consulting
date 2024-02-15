@@ -28,13 +28,13 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
 <style scoped>
 .site-footer {
   clear: both;
-  background-color: #def1e2;
+  background-image: url(/images/mc-consulting-header-background.jpg);
   padding-bottom: 2rem;
   margin-top: 3rem;
 }
 
 .social {
-  background-color: #def1eb;
+  background-color: #bee5dc;
   display: flex;
   align-items: center;
   justify-content: center;

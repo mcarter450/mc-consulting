@@ -18,7 +18,7 @@ export default {
 
     <p class="intro"><a href="/contact">Contact us</a> for a free estimate.</p>
 
-    <h1 class="clients">Clients</h1>
+    <h2 class="clients">Clients</h2>
 
     <div class="clients container">
       <a href="https://www.washrunner.com" target="_blank">
@@ -31,45 +31,53 @@ export default {
         <img src="@/assets/images/polyculture.svg" style="min-width: 200px;" alt="Polyculture Logo"></a>
     </div>
 
-    <h1 class="services">Services</h1>
+    <h2 class="services">Services</h2>
 
-    <h2><i class="fa-solid fa-code"></i> Web Development</h2>
+    <div class="card web-dev">
+      <h3><i class="fa-solid fa-code"></i> Web Development</h3>
 
-    <p class="service">Custom web application development in popular frameworks.</p>
+      <p class="service">Custom web application development in popular frameworks.</p>
 
-    <ul class="service">
-      <li>JavaScript development in React, Vue.js, Bootstrap or jQuery frameworks.</li>
-      <li>Front-end CSS and Sass development.</li>
-      <li>PHP development in Laravel & WordPress frameworks.</li>
-      <li>Performance tuning and optimizations.</li>
-    </ul>
+      <ul class="service">
+        <li>JavaScript development in React, Vue.js, Bootstrap or jQuery frameworks.</li>
+        <li>Front-end CSS and Sass development.</li>
+        <li>PHP development in Laravel & WordPress frameworks.</li>
+        <li>Performance tuning and optimizations.</li>
+      </ul>
+    </div>
 
-    <h2><i class="fa-brands fa-figma"></i> Web & UI/UX Design</h2>
+    <div class="card web-design">
+      <h3><i class="fa-brands fa-figma"></i> Web & UI/UX Design</h3>
 
-    <p class="service">Layout and design of new websites and apps.</p>
+      <p class="service">Layout and design of new websites and apps.</p>
 
-    <ul class="service">
-      <li>Design comps in Sketch or Figma.</li>
-      <li>Simulations of interactive components.</li>
-      <li>Usability testing.</li>
-    </ul>
+      <ul class="service">
+        <li>Design comps in Sketch or Figma.</li>
+        <li>Simulations of interactive components.</li>
+        <li>Usability testing.</li>
+      </ul>
+    </div>
 
-    <h2><i class="fa-solid fa-cloud"></i> Cloud Hosting</h2>
+    <div class="card cloud-hosting">
+      <h3><i class="fa-solid fa-cloud"></i> Cloud Hosting</h3>
 
-    <p class="service">Expertise in hosting with platforms like AWS, Amazon Lightsail, or Linode.</p>
+      <p class="service">Expertise in hosting with platforms like AWS, Amazon Lightsail, or Linode.</p>
 
-    <p class="service"><i>Whether you're launching a new website or need help with your hosting configuration or web services, we can help.</i></p>
+      <p class="service"><i>Whether you're launching a new website or need help with your hosting configuration or web services, we can help.</i></p>
 
-    <ul class="service">
-      <li>DNS for web or mail servers</li>
-      <li>Cloudflare or AWS configuration</li>
-      <li>Firewall configuration</li>
-      <li>Linux or system administration</li>
-    </ul>
+      <ul class="service">
+        <li>DNS for web or mail servers</li>
+        <li>Cloudflare or AWS configuration</li>
+        <li>Firewall configuration</li>
+        <li>Linux or system administration</li>
+      </ul>
+    </div>
 
-    <h2><i class="fa-solid fa-magnifying-glass"></i> SEO & Accessibility</h2>
+    <div class="card seo">
+      <h3><i class="fa-solid fa-magnifying-glass"></i> SEO & Accessibility</h3>
 
-    <p class="service">Please <RouterLink to="/contact">contact us</RouterLink> for a consultation on your website and recommendations for improving SEO and accessibility.</p>
+      <p class="service">Please <RouterLink to="/contact">contact us</RouterLink> for a consultation on your website and recommendations for improving SEO and accessibility.</p>
+    </div>
   </div>
 </template>
 
@@ -77,20 +85,60 @@ export default {
 p.intro {
   color: #333;
   font-size: 1.3rem;
-  line-height: 2.2rem;
+  line-height: 1.7;
   animation: slide-in-left 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-h1.services {
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 0.7rem;
+}
+
+h2.services {
   margin-bottom: 2rem;
 }
 
 .service {
-  line-height: 1.4rem;
+  line-height: 1.4;
 }
 
-h2 > i {
+h3 > i {
   color: #03ac13;
+}
+
+.card {
+  /*width: 50%;*/
+  padding: 1rem 1.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.card.web-dev {
+  background-color: #ffffe0;
+}
+
+.card.web-design {
+  background-color: #e0fff0;
+}
+
+.card.cloud-hosting {
+  background-color: #e0e0ff;
+}
+
+.cloud-hosting > h3 > i {
+  color: #9861cf;
+}
+
+.card.seo {
+  background-color: #ffe0f0;
+}
+
+.seo > h3 > i {
+  color: #9861cf;
 }
 
 .clients.container {
