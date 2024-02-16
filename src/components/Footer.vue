@@ -29,6 +29,7 @@ import LinkExternalIcon from '../components/icons/LinkExternal.vue'
 .site-footer {
   clear: both;
   background-image: url(/images/mc-consulting-header-background.jpg);
+  background-size: auto;
   padding-bottom: 2rem;
   margin-top: 3rem;
 }

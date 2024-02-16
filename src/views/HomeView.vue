@@ -16,8 +16,6 @@ export default {
 
     <p class="intro">MC Consulting is able to drive projects from concept to completion. We're small business friendly and take the time to fully understand the needs of our clients. Let us help you get your website up and running today.</p>
 
-    <p class="intro"><a href="/contact">Contact us</a> for a free estimate.</p>
-
     <h2 class="clients">Clients</h2>
 
     <div class="clients container">
@@ -78,6 +76,8 @@ export default {
 
       <p class="service">Please <RouterLink to="/contact">contact us</RouterLink> for a consultation on your website and recommendations for improving SEO and accessibility.</p>
     </div>
+
+    <p class="contact">Please <a href="/contact">contact us</a> for a free estimate.</p>
   </div>
 </template>
 
@@ -89,6 +89,12 @@ p.intro {
   animation: slide-in-left 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+p.contact {
+  color: #333;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
 h2 {
   font-size: 1.8rem;
 }
@@ -98,8 +104,20 @@ h3 {
   margin-top: 0.7rem;
 }
 
+h2.clients {
+  border-bottom: 1px solid #5588b4;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+  margin-left: -1rem;
+}
+
 h2.services {
-  margin-bottom: 2rem;
+  border-bottom: 1px solid #5588b4;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+  margin-left: -1rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .service {
@@ -113,8 +131,6 @@ h3 > i {
 .card {
   /*width: 50%;*/
   padding: 1rem 1.5rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
 }
 
 .card.web-dev {
@@ -144,6 +160,7 @@ h3 > i {
 .clients.container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .sooribali-logo {
@@ -169,6 +186,26 @@ li {
 
   .sooribali-logo {
     margin-left: 0;
+  }
+
+  h2.clients,
+  h2.services {
+    padding-left: 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  h2.clients {
+    margin-top: 2rem;
+  }
+
+  h2.services {
+    margin-top: 3rem;
+  }
+
+  .card {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
   }
 }
 

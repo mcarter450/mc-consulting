@@ -51,7 +51,7 @@ h2 {
 
 .portrait-block {
   display: flex;
-  background: linear-gradient(90deg, #e5bedb, transparent);
+  background: linear-gradient(90deg, aliceblue, transparent);
   height: 120px;
   align-items: center;
 }
